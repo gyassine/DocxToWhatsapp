@@ -1,8 +1,22 @@
-try:
-    from xml.etree.cElementTree import XML
-except ImportError:
-    from xml.etree.ElementTree import XML
 import zipfile
+import pyperclip
+
+
+
+try:
+    # for Python2
+    from xml.etree.cElementTree import XML
+    from Tkinter import *   ## notice capitalized T in Tkinter
+    from Tkinter import ttk
+    from tkFileDialog import askopenfilename
+except ImportError:
+    # for Python3
+    from xml.etree.ElementTree import XML
+    from tkinter import *   ## notice lowercase 't' in tkinter here
+    from tkinter import ttk
+    from tkinter.filedialog import askopenfilename
+
+
 
 """
 Module that extract text from MS XML Word document (.docx), convert it to unicode and modify it.
@@ -17,7 +31,21 @@ Among modifications :
 WORD_NAMESPACE = '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}'
 PARA = WORD_NAMESPACE + 'p'
 TEXT = WORD_NAMESPACE + 't'
+errmsg = 'Error!'
 
+
+def OpenFile():
+    """
+    GUI + copy result in clipboard
+    """
+    name = askopenfilename(initialdir="D:/yassi/Downloads",
+                           filetypes =[("Word File", "*.docx")],
+                           title = "Choose a file."
+                           )
+    if name :
+        pyperclip.copy(get_docx_text(name))
+        textlabel.set("Text is in clipboard")
+        # print(get_docx_text(name))
 
 def get_docx_text(path):
     """
@@ -35,13 +63,11 @@ def get_docx_text(path):
         texts = [node.text
                  for node in paragraph.getiterator(TEXT)
                  if node.text]
-        print(texts)
-        #print ("---sqdqsqsdqsdqsdqsd---")
 
         # MODIFICATION
         # Basic titles of my text
         if ''.join(texts).startswith('Chapitre') :
-            texts = ["📄*" + ''.join(texts) + "*"]
+            texts = ["📄*" + ''.join(texts) + "*","_Version PDF:_"]
         elif ''.join(texts).startswith('Traduction') :
             texts = ["_📌" + ''.join(texts) + "_"]
         elif ''.join(texts).startswith('Commentaires') :
@@ -94,6 +120,8 @@ def get_docx_text(path):
             print(texts)
             if ":" in ''.join(texts)[:6] :
                 texts = [''.join(texts).replace(':','',1)]
+            if " " in ''.join(texts)[:6] :
+                texts = [''.join(texts).replace(' ','',1)]
             print(texts)
 
         # in all other cases (ih not title, if does not have "Hadith N°)
@@ -124,5 +152,24 @@ def get_docx_text(path):
 
     return '\n\n'.join(paragraphs)
 
+root = Tk(  )
+Title = root.title( "DocxToWhatsapp Converter")
+textlabel = StringVar()
+textlabel.set(".docx => Whatsapp Converter")
+label = ttk.Label(root, textvariable =textlabel,foreground="red",font=("Helvetica", 16))
+label.pack()
+Button(text='File Open', command=OpenFile).pack(fill=X)
+Button(text='Exit', command=lambda:exit()).pack(fill=X)
 
-print(get_docx_text('D:\yassi\Downloads\Chapitre 176.docx'))
+#Menu Bar
+menu = Menu(root)
+root.config(menu=menu)
+file = Menu(menu)
+
+file.add_command(label = 'Open', command = OpenFile)
+file.add_command(label = 'Exit', command = lambda:exit())
+menu.add_cascade(label = 'File', menu = file)
+
+
+root.mainloop()
+
