@@ -67,7 +67,7 @@ def get_docx_text(path):
         # MODIFICATION
         # Basic titles of my text
         if ''.join(texts).startswith('Chapitre') :
-            texts = ["📄*" + ''.join(texts) + "*","_Version PDF:_"]
+            texts = ["📄*" + ''.join(texts) + "*"]
         elif ''.join(texts).startswith('Traduction') :
             texts = ["_📌" + ''.join(texts) + "_"]
         elif ''.join(texts).startswith('Commentaires') :
@@ -132,9 +132,11 @@ def get_docx_text(path):
         if texts:
             # Whatsapp formating bold for citation
             texts = [''.join(texts).replace('«','*«').replace('»','»*')]
+
             # Deleting non-breaking spaces & cie
             texts = [''.join(texts).replace('\xa0', '')]
             texts = [''.join(texts).replace('\u2009', '')]
+
             # Deleting useless spaces & cie
             texts = [''.join(texts).replace(' ﷺ', 'ﷺ')]
             texts = [''.join(texts).replace(' ؓ', 'ؓ')]
