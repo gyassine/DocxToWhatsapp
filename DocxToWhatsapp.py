@@ -1,5 +1,6 @@
 import zipfile
 import pyperclip
+import sys
 
 
 
@@ -9,6 +10,7 @@ try:
     from Tkinter import *   ## notice capitalized T in Tkinter
     from Tkinter import ttk
     from tkFileDialog import askopenfilename
+
 except ImportError:
     # for Python3
     from xml.etree.ElementTree import XML
@@ -33,6 +35,10 @@ PARA = WORD_NAMESPACE + 'p'
 TEXT = WORD_NAMESPACE + 't'
 errmsg = 'Error!'
 
+def quit():
+    global root
+    root.quit()
+    sys.exit()
 
 def OpenFile():
     """
@@ -161,7 +167,7 @@ textlabel.set(".docx => Whatsapp Converter")
 label = ttk.Label(root, textvariable =textlabel,foreground="red",font=("Helvetica", 16))
 label.pack()
 Button(text='File Open', command=OpenFile).pack(fill=X)
-Button(text='Exit', command=lambda:exit()).pack(fill=X)
+Button(text='Exit', command=quit).pack(fill=X)
 
 #Menu Bar
 menu = Menu(root)
@@ -169,7 +175,7 @@ root.config(menu=menu)
 file = Menu(menu)
 
 file.add_command(label = 'Open', command = OpenFile)
-file.add_command(label = 'Exit', command = lambda:exit())
+file.add_command(label = 'Exit', command = quit)
 menu.add_cascade(label = 'File', menu = file)
 
 
