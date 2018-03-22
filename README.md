@@ -1,8 +1,8 @@
 # DocxToWhatsapp
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) 
-[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-no-red.svg)](https://bitbucket.org/lbesson/ansi-colors) 
-[![GitHub version](https://badge.fury.io/gh/Naereen%2FStrapDown.js.svg)](https://github.com/Naereen/StrapDown.js)
+[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://choosealicense.com/licenses/gpl-3.0/)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-no-red.svg)] 
+[![GitHub version](https://badge.fury.io/gh/Naereen%2FStrapDown.js.svg)]
 
 A small python script that will open a `.docx` file and do some modifications that will allow me to copy &amp; paste in Whatsapp.
 
@@ -22,9 +22,12 @@ You need :
 
 ### Release History :notebook:
 Actual version : 1.1
-- 0.1 Basic
-- 0.2 GUI + copy&paste
-- 1.0 New version with possibility to create an exe file from py file 
+####  V1.0
+- New version modified to allow pyinstaller create an `.exe` file from `.py` file 
+####  V0.2
+- Implementation of GUI and "copy&paste" feature
+####  V0.1
+- Initial Commit Basic
 
 ## TODO :boom: 
 - [X] :white_check_mark: GUI 
@@ -33,7 +36,7 @@ Actual version : 1.1
 - [ ] :bookmark_tabs: Create a pdf file
 - [ ] :inbox_tray: Upload PDF to webpage and add link
 
-### Dependency :link:
+## Dependency :link:
 
 - python : [pyperclip](https://pypi.python.org/pypi/pyperclip)
 - Create an executable with [pyinstaller](https://www.pyinstaller.org/)
