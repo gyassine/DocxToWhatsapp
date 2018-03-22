@@ -1,5 +1,8 @@
 # DocxToWhatsapp
-[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)  [![Maintenance](https://img.shields.io/badge/Maintained%3F-no-red.svg)](https://bitbucket.org/lbesson/ansi-colors) 
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) 
+[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-no-red.svg)](https://bitbucket.org/lbesson/ansi-colors) 
+
 A small python script that will open a `.docx` file and do some modifications that will allow me to copy &amp; paste in Whatsapp.
 
 ![Screenshot](screenshot.png?raw=true "Screenshot")
@@ -18,8 +21,8 @@ Actual version : 3
 3. Allow to create an exe file 
 
 ### Dependency
-- python : pyperclip
-- Create an executable with pyinstaller
+- python : [pyperclip](https://pypi.python.org/pypi/pyperclip)
+- Create an executable with [pyinstaller](https://www.pyinstaller.org/)
   - `pyinstaller .\DocxToWhatsapp.py --clean -w`
 
 ## Author
