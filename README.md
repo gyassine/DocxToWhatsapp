@@ -13,6 +13,12 @@ You need :
 - python 3.6
 - pyinstaller (if you want to make an exe)
   - `pip install pyinstaller` 
+  
+### Getting Started
+- Download the latest release
+- Unzip and execute it on `Example.docx`
+- Paste it into whatever you want [WhatsApp](https://web.whatsapp.com) or anything else
+![What it does...](Description.png?raw=true "What it does...")
 
 ### Release History :notebook:
 Actual version : 1.1
