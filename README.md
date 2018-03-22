@@ -10,7 +10,6 @@ A small python script that will open a `.docx` file and do some modifications th
 
 ### Prerequisites :interrobang:
 You need :
-- [![PyPI pyversions](https://img.shields.io/pypi/pyversions/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
 - python 3.6
 - pyinstaller (if you want to make an exe)
   - `pip install pyinstaller` 
