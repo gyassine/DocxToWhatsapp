@@ -40,7 +40,7 @@ Actual version : 1.1
 
 - python : [pyperclip](https://pypi.python.org/pypi/pyperclip)
 - Create an executable with [pyinstaller](https://www.pyinstaller.org/)
-  - `pyinstaller .\DocxToWhatsapp.py --clean -w`
+  - `pyinstaller .\DocxToWhatsapp.py --clean -w --icon=AdaboulMufrad.ico --noconfirm`
 
 ## Author :computer:	
 - **Yassine Gangat** - [gyassine](https://github.com/gyassine)
