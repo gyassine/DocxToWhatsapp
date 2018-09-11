@@ -44,7 +44,7 @@ def OpenFile():
     """
     GUI + copy result in clipboard
     """
-    name = askopenfilename(initialdir="D:/yassi/Downloads",
+    name = askopenfilename(initialdir="D:\yassi\Documents\hubiC\En cours\Dars jeudi\Chapitres",
                            filetypes =[("Word File", "*.docx")],
                            title = "Choose a file."
                            )
@@ -73,7 +73,7 @@ def get_docx_text(path):
         # MODIFICATION
         # Basic titles of my text
         if ''.join(texts).startswith('Chapitre') :
-            texts = ["📄*" + ''.join(texts) + "*"]
+            texts = ["📄 *" + ''.join(texts) + "* "]
         elif ''.join(texts).startswith('Traduction') :
             texts = ["_📌" + ''.join(texts) + "_"]
         elif ''.join(texts).startswith('Commentaires') :
@@ -178,6 +178,6 @@ file.add_command(label = 'Open', command = OpenFile)
 file.add_command(label = 'Exit', command = quit)
 menu.add_cascade(label = 'File', menu = file)
 
-
+root.iconbitmap(r'C:\Users\yassi\PycharmProjects\DocxToWhatsapp\AdaboulMufrad.ico')
 root.mainloop()
 
