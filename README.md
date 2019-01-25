@@ -2,7 +2,7 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) 
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://choosealicense.com/licenses/gpl-3.0/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-no-red.svg)] 
-[![GitHub version](https://badge.fury.io/gh/Naereen%2FStrapDown.js.svg)]
+[![GitHub version](https://img.shields.io/github/release/gyassine/DocxToWhatsapp.svg)]
 
 A small python script that will open a `.docx` file and do some modifications that will allow me to copy &amp; paste in Whatsapp.
 
